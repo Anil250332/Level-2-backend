@@ -96,6 +96,25 @@ function writeToFile(tasks) {
 
 const isMongoConnected = () => mongoose.connection.readyState === 1;
 
+const PRIORITY_WEIGHTS = {
+  Urgent: 4,
+  High: 3,
+  Normal: 2,
+  Medium: 2,
+  Low: 1,
+};
+
+function sortTasksByPriority(tasks) {
+  return [...tasks].sort((a, b) => {
+    const weightA = PRIORITY_WEIGHTS[a.priority] || 2;
+    const weightB = PRIORITY_WEIGHTS[b.priority] || 2;
+    if (weightB !== weightA) {
+      return weightB - weightA; // High priority before Normal/Medium
+    }
+    return (a.order || 0) - (b.order || 0);
+  });
+}
+
 async function getAllTasks() {
   if (isMongoConnected()) {
     try {
@@ -104,14 +123,14 @@ async function getAllTasks() {
         // Seed default tasks into mongo
         const formatted = defaultTasks.map(({ id, ...rest }) => rest);
         const seeded = await Task.insertMany(formatted);
-        return seeded.map((t) => t.toJSON());
+        return sortTasksByPriority(seeded.map((t) => t.toJSON()));
       }
-      return tasks.map((t) => t.toJSON());
+      return sortTasksByPriority(tasks.map((t) => t.toJSON()));
     } catch (err) {
       console.warn('Mongo query failed, using file fallback:', err.message);
     }
   }
-  return readFromFile();
+  return sortTasksByPriority(readFromFile());
 }
 
 async function createTask(data) {
