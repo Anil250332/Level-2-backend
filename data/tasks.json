@@ -1,0 +1,57 @@
+[
+  {
+    "id": "task-1",
+    "title": "Research user feedback for V2 redesign",
+    "description": "Analyze session recordings and user interview notes to identify UX friction points in task filtering.",
+    "priority": "Medium",
+    "dueDate": "2026-11-02",
+    "status": "todo",
+    "order": 0,
+    "createdAt": "2026-10-31T06:37:03.528Z",
+    "updatedAt": "2026-10-31T06:37:03.528Z"
+  },
+  {
+    "id": "task-2",
+    "title": "Implement drag-and-drop Kanban columns",
+    "description": "Support native HTML5 Drag and Drop with visual drop-zone indicators and smooth card animations.",
+    "priority": "Urgent",
+    "dueDate": "2026-11-01",
+    "status": "in-progress",
+    "order": 0,
+    "createdAt": "2026-10-31T06:37:03.528Z",
+    "updatedAt": "2026-10-31T06:37:03.528Z"
+  },
+  {
+    "id": "task-3",
+    "title": "Design clean monochrome design system",
+    "description": "Create high-contrast Black & White theme inspired by Linear and Vercel typography standards.",
+    "priority": "High",
+    "dueDate": "2026-10-31",
+    "status": "completed",
+    "order": 0,
+    "createdAt": "2026-10-31T06:37:03.528Z",
+    "updatedAt": "2026-10-31T06:37:03.528Z"
+  },
+  {
+    "id": "task-4",
+    "title": "Build RESTful API with validation and MERN fallback",
+    "description": "Provide endpoints for CRUD operations, status updates, and graceful in-memory file fallback.",
+    "priority": "High",
+    "dueDate": "2026-10-31",
+    "status": "completed",
+    "order": 1,
+    "createdAt": "2026-10-31T06:37:03.528Z",
+    "updatedAt": "2026-10-31T06:37:03.528Z"
+  },
+  {
+    "id": "task-5",
+    "title": "Add priority filtering and search bar",
+    "description": "Allow instant live search by keyword and filtering by Low, Medium, High, and Urgent badges.",
+    "priority": "Medium",
+    "dueDate": "2026-11-04",
+    "status": "todo",
+    "order": 1,
+    "createdAt": "2026-10-31T06:37:03.528Z",
+    "updatedAt": "2026-10-31T06:37:03.528Z"
+  }
+]
